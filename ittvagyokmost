@@ -1,30 +1,29 @@
-  float parossorX[] = new float[80];
-  float parossorY[] = new float[30];
+float parossorY[] = new float[80];
   float paratlansorX[] = new float[80];
-  float paratlansorY[] = new float[30];
+  float paratlansorY[] = new float[80];
+  int nagysag = 26;
   
 void setup(){
   size(800, 600);
   background(#FFFFFF);
   ertekek();
-  haromszogek();
-}
-
-void draw(){ 
+  rajz();
 }
 
 void ertekek() {
-  for(int i = 0; i< parossorX.length; ++i) {
-    parossorX[i] = 10*i;
-    paratlansorX[i] = parossorX[i] + 5;
-  }
   for(int i=0; i<parossorY.length; ++i) {
-    parossorY[i] = 10*i;
-    paratlansorY[i] = parossorY[i] +5;
+    parossorX[i] = nagysag + nagysag*i;
+    paratlansorX[i] = nagysag*i;
+    parossorY[i] = nagysag;
+    paratlansorY[i] = nagysag;
   }
 }
-void haromszogek(){
-  for (int i=0; i < parossorX.length; ++i) {
-    triangle(paratlansorX[i], paratlansorY[i]; parossorX[i]; parossorY[i]; parossorY[i+1]; parossorY[i+1]);
+
+void rajz() {
+  for(int a = 0; a< parossorY.length; ++a) { 
+  for (int i = 0; i < parossorX.length; ++i) {
+    triangle(parossorX[i], parossorY[i], paratlansorX[i], paratlansorY[i], paratlansorX[i]+13, paratlansorY[i]+13);
+  }
   }
 }
+
